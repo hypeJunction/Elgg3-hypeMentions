@@ -3,7 +3,7 @@
 
     <name>hypeMentions</name>
     <id>hypeMentions</id>
-    <version type="dist">0.0.0</version>
+    <version type="dist">1.0.0</version>
 
     <description>Mentions</description>
     <category>content</category>
