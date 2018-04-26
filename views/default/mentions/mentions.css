@@ -38,7 +38,7 @@
 	list-style: none;
 	padding: 0;
 	margin: auto;
-	height: 18rem;
+	max-height: 18rem;
 	overflow-x: hidden;
 	overflow-y: auto;
 }
