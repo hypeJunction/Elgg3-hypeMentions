@@ -15,6 +15,8 @@ if (file_exists("$plugin_root/vendor/autoload.php")) {
 }
 
 return [
+	'bootstrap' => \hypeJunction\Mentions\Bootstrap::class,
+	
 	'routes' => [
 		'mentions:search:entities' => [
 			'path' => '/mentions/search/entities',
@@ -33,6 +35,7 @@ return [
 			'controller' => [Controller::class, 'showEntity'],
 		],
 	],
+
 	'views' => [
 		'default' => [
 			'atwho.js' => $views_path . '/vendor/bower-asset/At.js/dist/js/jquery.atwho.min.js',
