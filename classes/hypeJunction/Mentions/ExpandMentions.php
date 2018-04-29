@@ -4,19 +4,27 @@ namespace hypeJunction\Mentions;
 
 class ExpandMentions {
 
-	use Linking;
-
 	/**
 	 * Expand mentions from @[guid:name] format
 	 *
 	 * @param \Elgg\Hook $hook
 	 *
-	 * @return void|array
+	 * @return string
 	 */
 	public function __invoke(\Elgg\Hook $hook) {
 
 		$value = $hook->getValue();
 
-		return $this->link($value);
+		$options = [
+			'sanitize' => false,
+			'autop' => false,
+			'parse_urls' => true,
+			'parse_emails' => true,
+			'parse_usernames' => true,
+			'parse_hashtags' => true,
+			'parse_mentions' => true,
+		];
+
+		return elgg_format_html($value, $options);
 	}
 }

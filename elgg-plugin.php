@@ -16,7 +16,7 @@ if (file_exists("$plugin_root/vendor/autoload.php")) {
 
 return [
 	'bootstrap' => \hypeJunction\Mentions\Bootstrap::class,
-	
+
 	'routes' => [
 		'mentions:search:entities' => [
 			'path' => '/mentions/search/entities',

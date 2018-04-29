@@ -2,25 +2,41 @@
 
 namespace hypeJunction\Mentions;
 
-trait Linking {
+use Elgg\Di\ServiceFacade;
+
+class MentionsService {
+
+	use ServiceFacade;
+
+	/**
+	 * {@inheritdoc}
+	 */
+	public function name() {
+		return 'posts.mentions';
+	}
 
 	/**
 	 * Links mentions and hashtags
 	 *
-	 * @param string $value text to process
+	 * @param string $value  text to process
+	 * @param array  $option Linking options
 	 *
 	 * @return string
 	 */
-	public function link($value) {
+	public function link($value, array $options = []) {
 
-		$value = html_entity_decode($value, ENT_QUOTES, 'UTF-8');
+		//$value = html_entity_decode($value, ENT_QUOTES, 'UTF-8');
 
-		// Link mentions @[guid:name]
-		$value = preg_replace_callback('/@\[(\d+):(.*?)\]/i', [$this, 'linkMentions'], $value);
+		if (elgg_extract('parse_mentions', $options, true)) {
+			// Link mentions @[guid:name]
+			$value = preg_replace_callback('/@\[(\d+):(.*?)\]/i', [$this, 'linkMentions'], $value);
+		}
 
-		// Link hashtags
-		$regex = '/<a[^>]*?>.*?<\/a>|<.*?>|(^|\s|\!|\.|\?|>|\G)+(#\w+)/i';
-		$value = preg_replace_callback($regex, [$this, 'linkHashtags'], $value);
+		if (elgg_extract('parse_hashtags', $options, true)) {
+			// Link hashtags
+			$regex = '/<a[^>]*?>.*?<\/a>|<.*?>|(^|\s|\!|\.|\?|>|\G)+(#\w+)/i';
+			$value = preg_replace_callback($regex, [$this, 'linkHashtags'], $value);
+		}
 
 		return $value;
 	}

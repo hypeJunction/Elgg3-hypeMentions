@@ -2,6 +2,7 @@
 
 namespace hypeJunction\Mentions;
 
+use Elgg\Includer;
 use Elgg\PluginBootstrap;
 
 class Bootstrap extends PluginBootstrap {
@@ -41,8 +42,9 @@ class Bootstrap extends PluginBootstrap {
 
 		elgg_register_simplecache_view('mentions/emoji.js');
 
+		elgg_register_plugin_hook_handler('prepare', 'html', PrepareHtmlOutput::class);
+
 		elgg_register_plugin_hook_handler('view', 'output/plaintext', ExpandMentions::class, 9999);
-		elgg_register_plugin_hook_handler('view', 'output/longtext', ExpandMentions::class, 9999);
 		elgg_register_plugin_hook_handler('view', 'search/entity', ExpandMentions::class, 9999);
 
 		elgg_register_event_handler('create', 'object', \hypeJunction\Mentions\SaveMentions::class);
