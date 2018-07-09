@@ -19,6 +19,7 @@
 .atwho-view .cur {
 	background: $(background-color-highlight);
 	color: white;
+	transition: none;
 }
 
 .atwho-view .cur small {
