@@ -1,3 +1,15 @@
+<a name="1.1.1"></a>
+## [1.1.1](https://github.com/hypeJunctionPro/Elgg3-hypeMentions/compare/1.1.0...1.1.1) (2018-07-09)
+
+
+### Bug Fixes
+
+* **assets:** use npm assets and load from asset packagist ([76c3300](https://github.com/hypeJunctionPro/Elgg3-hypeMentions/commit/76c3300))
+* **css:** disable transitions ([4ad4e11](https://github.com/hypeJunctionPro/Elgg3-hypeMentions/commit/4ad4e11))
+* **ux:** populate default list with users if user has no friends ([4f9de71](https://github.com/hypeJunctionPro/Elgg3-hypeMentions/commit/4f9de71))
+
+
+
 <a name="1.1.0"></a>
 # [1.1.0](https://github.com/hypeJunctionPro/Elgg3-hypeMentions/compare/1.0.0...1.1.0) (2018-06-29)
 
