@@ -19,12 +19,24 @@
 	},
 	"require": {
 		"composer/installers": "~1.0",
-		"bower-asset/at.js": "^1.5",
-		"php-extended/php-emoji-cheat-sheet": "^1.0"
+		"npm-asset/at.js": "^1.5",
+		"php-extended/php-emoji-cheat-sheet": "^1.0",
+		"npm-asset/jquery.caret": "^0.3.1"
 	},
 	"autoload": {
 		"psr-0": {
 			"": "classes/"
 		}
-	}
+	},
+    "config": {
+        "fxp-asset": {
+            "enabled": false
+        }
+    },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://asset-packagist.org"
+        }
+    ]
 }

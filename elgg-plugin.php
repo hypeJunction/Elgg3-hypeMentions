@@ -38,9 +38,9 @@ return [
 
 	'views' => [
 		'default' => [
-			'atwho.js' => $views_path . '/vendor/bower-asset/At.js/dist/js/jquery.atwho.min.js',
-			'atwho.css' => $views_path . '/vendor/bower-asset/At.js/dist/css/jquery.atwho.min.css',
-			'caret.js' => $views_path . '/vendor/bower-asset/caret.js/dist/jquery.caret.min.js',
+			'atwho.js' => $views_path . '/vendor/npm-asset/at.js/dist/js/jquery.atwho.min.js',
+			'atwho.css' => $views_path . '/vendor/npm-asset/at.js/dist/css/jquery.atwho.min.css',
+			'caret.js' => $views_path . '/vendor/npm-asset/jquery.caret/dist/jquery.caret.min.js',
 		],
 	],
 ];
