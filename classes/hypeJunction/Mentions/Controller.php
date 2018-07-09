@@ -23,6 +23,12 @@ class Controller {
 			if ($user) {
 				$items = $user->getFriends(['limit' => 20]);
 			}
+			if (empty($items)) {
+				$items = elgg_get_entities([
+					'types' => 'user',
+					'limit' => 20,
+				]);
+			}
 		} else {
 			$items = $request->elgg()->hooks->trigger('mentions:search', 'entities', [
 				'query' => $query,
